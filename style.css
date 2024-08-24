@@ -1,0 +1,242 @@
+@font-face{
+    font-family: 'Poppins';
+    font-display: swap;
+    font-weight: 400,700,800;
+    src: url(assets/fonts/Poppins-Bold.ttf) format('truetype'),
+         url(assets/fonts/Poppins-BoldItalic.ttf) format('truetype'),
+         url(assets/fonts/Poppins-ExtraBold.ttf) format('truetype'),
+         url(assets/fonts/Poppins-ExtraBoldItalic.ttf) format('truetype'),
+         url(assets/fonts/Poppins-Italic.ttf) format('truetype'),
+         url(assets/fonts/Poppins-Regular.ttf) format('truetype');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+--white: hsl(0, 0%, 100%);
+--off-white: hsl(0, 0%, 94%);
+--light-grey: hsl(0, 0%, 86%);
+--smokey-grey: hsl(0, 1%, 44%);
+--off-black: hsl(0, 0%, 8%); 
+--purple: hsl(259, 100%, 65%);
+--light-red: hsl(0, 100%, 67%);  
+}
+body{
+    background-color: var(--light-grey);
+    font-family: 'poppins';
+}
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+@media (max-width:1440px) {
+    .calculatorContainer{
+        background-color: var(--white);
+        padding: 40px;
+        width: 650px;
+        border-radius: 10px 10px 60px 10px;
+    }
+    form{
+        width: 100%;
+    }
+    label{
+        font-size: 12px;
+        font-weight: 400i;
+        letter-spacing: 2px;
+        color: var(--smokey-grey);
+    }
+    label input{
+        font-size: 32px;
+        padding: 15px 10px;
+        width:140px;
+        font-weight: 700;
+        border-radius: 5px;
+        margin-top: 10px; 
+        outline: none;
+        border: 1px solid var(--light-grey);
+    }
+    .inputContainer{
+        width: auto;
+        display: flex;
+        gap: 10px;
+        padding: 0 0 50px 0;
+        border-bottom: 1px solid var(--light-grey);   
+    }
+    .errorMessage{
+        top: 20px;
+        font-size: 10px;
+        color: var(--light-red);
+        font-style: italic;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-wrap: wrap;
+        display: none;  
+    }
+    .required{
+        top: 20px;
+        font-size: 10px;
+        color: var(--light-red);
+        font-style: italic;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-wrap: wrap;
+        display: none;
+    }
+    .results{
+        margin-top: -15px;
+        border-radius: 20px;
+    }
+    .results h1{
+        font-size: 60px;
+        font-weight: 800;
+        font-style: italic;
+        line-height: 65px;
+        color: var(--off-black);
+    }
+    .results span:nth-child(1){
+        color: var(--purple);
+    }
+    form button{ 
+        background: url(assets/images/icon-arrow.svg)no-repeat center center / 27.5px;
+        background-color: var(--purple);
+        border-radius: 50%;
+        position: relative;
+        top: -31px;
+        left: 100%;
+        transform: translateX(-100%);
+        width: 60px;
+        height: 60px;
+        border: none;   
+    }
+    form button:hover{
+        background-color: var(--off-black);
+        transition: .5s ease;
+    }
+    form button:active{
+        background-color: var(--smokey-grey);
+        color: var(--purple);
+        border: 1px solid var(--off-black);
+        transition: .5s ease;
+    }
+    .attribution{
+        text-align: center;  
+    }
+}
+@media (max-width:655px) {
+    .calculatorContainer{
+        width: 100%;
+    }  
+    section{
+        padding: 0 10px;
+    }
+}
+@media (max-width:540px) {
+    .calculatorContainer{
+        padding: 30px;
+    }
+    .inputContainer{
+        gap: unset;
+        justify-content: space-between;
+    }
+    form button{
+        top: -26px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    label input{
+        width: 130px;
+    }  
+}
+@media (max-width:477px) {
+    .calculatorContainer{
+        padding: 25px;
+    }
+    form button{
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    label input{
+        width: 105px;
+        font-size: 20px;
+    }
+    .results h1{
+     font-size: 55px;
+    } 
+    .errorMessage,
+    .required{
+        font-size: 8px;
+    } 
+}
+@media (max-width: 418px) {
+    label input{
+        width: 95px;
+    } 
+}
+@media (max-width: 375px) {
+    section{
+        padding: 0 10px;
+    }
+    .calculatorContainer{
+        background-color: var(--white);
+        padding: 15px;
+    }
+    label input{
+        font-size: 18px;
+        padding: 10px;
+        width: 95px;
+        font-weight: 800;
+        border-radius: 5px;
+        margin-top: 5px;
+        outline: none;
+    }
+    .inputContainer{
+        padding: 0 0 40px 0;
+        border-bottom: 1px solid var(--light-grey);
+    }
+    .results{
+        padding: 0 5px 10px 5px;
+        gap: 5px;
+    }
+    .results h1{
+        font-size: 50px;
+        line-height: 55px;
+    }
+    form button{
+        top: -26px;
+        width: 50px;
+        height: 50px;
+    }
+    form button:hover{
+        background-color: var(--off-black);
+        transition: .5s ease;
+    }  
+}
+@media (max-width: 342px) {
+    label{
+        font-size: 10px;
+    }
+    label input{
+        font-size: 15px;
+        padding: 6px;
+        width: 70px;
+    }
+    .results h1{
+        font-size: 35px;
+    }
+    form button{
+        top: -24px;
+        width: 45px;
+        height: 45px;
+    }
+    .errorMessage,
+    .required{
+        font-size: 7px;
+    } 
+}
